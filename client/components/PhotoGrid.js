@@ -5,12 +5,12 @@ import Photo from './Photo';
 
 const PhotoGrid=React.createClass({
    render(){
-    console.log(this.props.posts[0].display_src);
+    console.log(this.props);
     return(
         <div className='photo-grid'>
             { 
                 this.props.posts.map((post, idx)=>{
-                    return <Photo post={post} key = {idx} id={idx} comments = {this.props.comments[post.code]} />
+                    return <Photo post={post} key = {idx} id={idx} increment ={this.props.increment} comments = {this.props.comments[post.code]} />
                 })
             }
         </div>

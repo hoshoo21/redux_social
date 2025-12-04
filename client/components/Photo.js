@@ -12,7 +12,7 @@ const Photo = React.createClass({
                     <Link to ={`/view/${this.props.post.code}`}>
                         <img src= {this.props.post.display_src} alt ={this.props.post.caption} className='grid-photo'/>
                      </Link>
-                     < CSSTransitionGroup transtionName = 'like'
+                     < CSSTransitionGroup transitionName = 'like'
                         transitionEnterTimeout={500}
                         transitionLeaveTimeout={500}>
                             <span key = {this.props.post.likes} className='likes-heart'>
@@ -24,7 +24,11 @@ const Photo = React.createClass({
                 <figcaption>
                     <p> {this.props.post.caption}</p>
                     <div className='control-button'>
-                        <button className='likes'>&hearts; {this.props.post.likes}</button>
+                        <button className='likes'
+                            onClick = {this.props.increment.bind(null,this.props.id)}
+                        >&hearts; {this.props.post.likes}
+                        
+                        </button>
                         <Link className='button' to ={`/view/${this.props.post.code}`}> 
                             <span className='speech-bubble'></span>
                             {this.props.comments? this.props.comments.length : 0}

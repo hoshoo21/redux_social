@@ -1,10 +1,19 @@
+import { getAssetUrl, PUBLIC_ROOT } from '../config/assetConfig.js';
+
+// 1. DELETE the line: import img from '../public/images/sahar_fuck.jpg';
+
+// 2. Define the relative path from the root that your assetConfig uses
+const image_path = 'http://localhost:7780/images/sahar_fuck.jpg'; 
+const localSrc = getAssetUrl(image_path);
+
+console.log(localSrc);
 const posts = [
   {
     'code': 'BAcyDyQwcXX',
-    'caption': 'Lunch #hamont',
+    'caption': 'wanna fuck this beauty',
     'likes': 56,
     'id': '1161022966406956503',
-    'display_src': `https://picsum.photos/400/400/?image=${Math.floor((Math.random() * 85))}`,
+    'display_src':localSrc,
   },
   {
     'code': 'BAcJeJrQca9',
